@@ -1,0 +1,25 @@
+<aura:component
+  implements="flexipage:availableForAllPageTypes"
+  controller="demoAcademyComponentController"
+>
+  <aura:attribute name="newAccount" type="Account" default="{'sObjectType' : 'Account','Name' : '','Type' : ''}"/>
+  <aura:attribute name="objName" type="String" default="Account" />
+  <aura:attribute name="fldName" type="String" default="Type" />
+  <aura:attribute name="typeList" type="List" />
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <lightning:card title="Demo Academy Aura Component Apex">
+    <div class="slds-p-around_medium">
+      <lightning:input type="Text" label="Name" value="{!v.newAccount.Name}" />
+      <lightning:select label="Type" value="{!v.newAccount.Type}">
+        <option value="">--None--</option>
+        <aura:iteration items="{!v.typeList}" var="ac">
+          <option value="{!ac}">{!ac}</option>
+        </aura:iteration>
+      </lightning:select>
+    </div>
+    <aura:set attribute="footer">
+      <lightning:button label="Save" variant="brand" onclick="{!c.doSave}" />
+    </aura:set>
+  </lightning:card>
+</aura:component>

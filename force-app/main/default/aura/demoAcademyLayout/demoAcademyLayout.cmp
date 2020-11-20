@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+  <lightning:layout multipleRows="true" horizontalAlign="space">
+    <lightning:layoutItem size="12">
+      <lightning:card title="Using Lightning Layout"> </lightning:card>
+    </lightning:layoutItem>
+    <lightning:layoutItem size="6">
+        <c:demoAcademyAuraApex></c:demoAcademyAuraApex>
+    </lightning:layoutItem>
+    <lightning:layoutItem size="6">
+        <!--c:demoAcademyLWCApex></c:demoAcademyLWCApex-->
+    </lightning:layoutItem>
+  </lightning:layout>
+</aura:component>
